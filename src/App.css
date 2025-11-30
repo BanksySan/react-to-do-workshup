@@ -1,42 +1,59 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.todo-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center; /* centre the columns */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Each list column ("Title A", "Title B", etc.) */
+.todo-card {
+    flex: 1 1 320px;          /* allow them to grow + shrink */
+    max-width: 380px;         /* reasonable max width */
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e0e0e0;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.todo-card > h1 {
+    color: #213547;
 }
 
-.card {
-  padding: 2em;
+.todo-card > p {
+    color: #646cff;
 }
 
-.read-the-docs {
-  color: #888;
+/* Inner container for the tasks – now a grid */
+.task-list {
+    display: grid;
+    /* as many columns as fit; each at least 160px wide */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.task-card {
+    box-sizing: border-box;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e0e0e0;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.task-card > h1 {
+    color: #213547;
+}
+
+.task-card > p {
+    color: #646cff;
 }

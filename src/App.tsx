@@ -1,35 +1,53 @@
-import { useState } from 'react'
+import {useState} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Title from "./components/Title.tsx";
+import ToDoList from "./components/ToDoList.tsx";
 
-function App() {
-  const [count, setCount] = useState(0)
+const toDoCards = [
+    {
+        title: 'Title A', description: 'Description A',
+        tasks: [{
+            title: 'Task A1',
+            description: 'Task Description A1'
+        }, {
+            title: 'Task A2',
+            description: 'Task Description A2'
+        }]
+    },
+    {
+        title: 'Title B', description: "Description B",
+        tasks: [{
+            title: 'Task B1',
+            description: 'Task Description B1'
+        }, {
+            title: 'Task B2',
+            description: 'Task Description B2'
+        }]
+    },
+    {
+        title: 'Title C', description: "Description C",
+        tasks: [{
+            title: 'Task C1',
+            description: 'Task Description C1'
+        }, {
+            title: 'Task C2',
+            description: 'Task Description C2'
+        }]
+    },
+    {
+        title: 'Title D', description: "Description D",
+        tasks: [{
+            title: 'Task D1',
+            description: 'Task DesDription D1'
+        }, {
+            title: 'Task D2',
+            description: 'Task DesDription D2'
+        }]
+    }
+]
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export default function App() {
+    return <ToDoList todoCards={toDoCards}/>
 }
-
-export default App
