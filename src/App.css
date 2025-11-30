@@ -1,15 +1,23 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .todo-list {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
     align-items: flex-start;
-    justify-content: center; /* centre the columns */
+    justify-content: center;
 }
 
-/* Each list column ("Title A", "Title B", etc.) */
 .todo-card {
-    flex: 1 1 320px;          /* allow them to grow + shrink */
-    max-width: 380px;         /* reasonable max width */
+    flex: 1 1 320px;
+    max-width: 380px;
     padding: 1.25rem 1.5rem;
     border-radius: 0.75rem;
     border: 1px solid #e0e0e0;
@@ -22,16 +30,21 @@
 
 .todo-card > h1 {
     color: #213547;
+    margin: 0;
 }
 
 .todo-card > p {
     color: #646cff;
+    margin: 0;
 }
 
-/* Inner container for the tasks – now a grid */
+.create-card {
+    background: linear-gradient(120deg, #f6f9ff 0%, #f9fdff 100%);
+    border-color: #d4e6ff;
+}
+
 .task-list {
     display: grid;
-    /* as many columns as fit; each at least 160px wide */
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1rem;
     align-items: stretch;
@@ -44,7 +57,6 @@
     border: 1px solid #e0e0e0;
     background: #ffffff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -52,8 +64,102 @@
 
 .task-card > h1 {
     color: #213547;
+    margin: 0;
 }
 
 .task-card > p {
     color: #646cff;
+    margin: 0;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+    color: #213547;
+}
+
+input,
+textarea,
+button {
+    font: inherit;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d0d7e2;
+    background: #fbfbfd;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4b74ff;
+    box-shadow: 0 0 0 3px rgba(75, 116, 255, 0.15);
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+button {
+    padding: 0.55rem 0.85rem;
+    border-radius: 0.5rem;
+    border: 1px solid #4b74ff;
+    background: #4b74ff;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.05s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+    background: #3b63e6;
+    box-shadow: 0 3px 10px rgba(75, 116, 255, 0.25);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+button.ghost {
+    background: transparent;
+    color: #213547;
+    border-color: #cfd6e3;
+}
+
+button.danger {
+    background: #e65050;
+    border-color: #e65050;
+}
+
+button.danger:hover {
+    background: #d34343;
+}
+
+.add-task-form {
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #eef1f6;
+}
+
+.muted {
+    color: #8c95a6;
 }
